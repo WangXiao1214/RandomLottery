@@ -1,0 +1,95 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|e:\\\u8BB0\u5F55\\\u5B66\u4E60\\csharp_project\\chapter21_1\\chapter21_1\\mainviewmodel\\randomlottery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|solutionrelative:chapter21_1\\mainviewmodel\\randomlottery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|e:\\\u8BB0\u5F55\\\u5B66\u4E60\\csharp_project\\chapter21_1\\chapter21_1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|solutionrelative:chapter21_1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|e:\\\u8BB0\u5F55\\\u5B66\u4E60\\csharp_project\\chapter21_1\\chapter21_1\\tools\\phonenumbergenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|solutionrelative:chapter21_1\\tools\\phonenumbergenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|e:\\\u8BB0\u5F55\\\u5B66\u4E60\\csharp_project\\chapter21_1\\chapter21_1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4466F2D7-F1BE-4C2D-925A-E0200EE3DEEA}|Chapter21_1\\Chapter21_1.csproj|solutionrelative:chapter21_1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PhoneNumberGenerator.cs",
+              "DocumentMoniker": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\Tools\\PhoneNumberGenerator.cs",
+              "RelativeDocumentMoniker": "Chapter21_1\\Tools\\PhoneNumberGenerator.cs",
+              "ToolTip": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\Tools\\PhoneNumberGenerator.cs",
+              "RelativeToolTip": "Chapter21_1\\Tools\\PhoneNumberGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T06:29:20.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RandomLottery.cs",
+              "DocumentMoniker": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\MainViewModel\\RandomLottery.cs",
+              "RelativeDocumentMoniker": "Chapter21_1\\MainViewModel\\RandomLottery.cs",
+              "ToolTip": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\MainViewModel\\RandomLottery.cs",
+              "RelativeToolTip": "Chapter21_1\\MainViewModel\\RandomLottery.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T05:40:23.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Chapter21_1\\MainWindow.xaml",
+              "ToolTip": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\MainWindow.xaml",
+              "RelativeToolTip": "Chapter21_1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-28T05:39:22.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Chapter21_1\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\\u8BB0\u5F55\\\u5B66\u4E60\\CSharp_Project\\Chapter21_1\\Chapter21_1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Chapter21_1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-28T05:39:19.208Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
