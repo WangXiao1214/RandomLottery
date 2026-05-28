@@ -6,55 +6,237 @@
         xmlns:local="clr-namespace:Chapter21_1"
         xmlns:vm="clr-namespace:Chapter21_1.MainViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="随机抽奖系统" MinHeight="750" MinWidth="600" Height="750" Width="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#F0F4F8">
 
     <Window.DataContext>
         <vm:RandomLottery/>
     </Window.DataContext>
-    
+
+    <Window.Resources>
+        <!-- 圆角按钮样式 -->
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"
+                                            Content="{TemplateBinding Content}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Opacity" Value="0.9"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Border" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.98" ScaleY="0.98"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#CCCCCC"/>
+                                <Setter Property="Foreground" Value="#888888"/>
+                                <Setter Property="Cursor" Value="Arrow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 数字显示样式 -->
+        <Style x:Key="NumberDisplay" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <!-- 状态文字样式 -->
+        <Style x:Key="StatusText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#7F8C8D"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <!-- 阴影效果 -->
+        <DropShadowEffect x:Key="ShadowEffect" 
+                         BlurRadius="15" 
+                         ShadowDepth="5" 
+                         Opacity="0.3"
+                         Color="#000000"/>
+
+        <!-- 发光效果 -->
+        <DropShadowEffect x:Key="GlowEffect" 
+                         BlurRadius="20" 
+                         ShadowDepth="0" 
+                         Opacity="0.5"
+                         Color="#3498DB"/>
+    </Window.Resources>
+
     <Grid>
+        <!-- 主容器 -->
+        <Border BorderBrush="#D5D8DC" 
+                BorderThickness="1" 
+                CornerRadius="15"
+                Background="White"
+                Effect="{StaticResource ShadowEffect}"
+                Margin="40">
 
-        <Border BorderBrush="Gray" BorderThickness="1"
-                    Height="300" Width="500">
-
-            <Grid>
+            <Grid Margin="30">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"
-                            Margin="10">
-                    <TextBlock Text="{Binding Status}"/>
-                </StackPanel>
+                <!-- 标题区域 -->
+                <Border Grid.Row="0" 
+                        CornerRadius="10"
+                        Margin="0,0,0,20">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                            <GradientStop Color="#667EEA" Offset="0"/>
+                            <GradientStop Color="#764BA2" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
 
-                <Border Grid.Row="1" 
-                        BorderBrush="Gray" BorderThickness="1"
-                        Margin="5">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="{Binding PhoneNumberDisplay}"
-                               FontSize="35"/>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="🎲 随机抽奖系统" 
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="点击开始按钮，随机生成幸运号码" 
+                                   FontSize="12" 
+                                   Foreground="#E0E0E0" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
                     </StackPanel>
-
                 </Border>
 
-                <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Margin="10" Orientation="Horizontal">
-                    <Button Command="{Binding StartCommand}"
-                        Content="开始"
-                        Height="50" Width="100" Margin="0 0 50 0"/>
+                <!-- 状态显示区域 -->
+                <Border Grid.Row="1" 
+                        Background="#F8F9FA" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock Text="当前状态" 
+                                   FontSize="12" 
+                                   Foreground="#95A5A6"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Status}" 
+                                   Style="{StaticResource StatusText}"
+                                   FontSize="16"
+                                   Foreground="#2C3E50"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
 
+                <!-- 号码显示区域 -->
+                <Border Grid.Row="2" 
+                        CornerRadius="20"
+                        Margin="0,0,0,30"
+                        Padding="30">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#667EEA" Offset="0"/>
+                            <GradientStop Color="#764BA2" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <!-- 数字显示容器 -->
+                    <Border Background="White" 
+                            CornerRadius="15" 
+                            Padding="20"
+                            Effect="{StaticResource GlowEffect}">
+                        <StackPanel VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center">
+                            <TextBlock Text="🏆 幸运号码 🏆" 
+                                       FontSize="14" 
+                                       Foreground="#667EEA"
+                                       FontWeight="Bold"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,0,0,10"/>
+                            <TextBlock Text="{Binding PhoneNumberDisplay}"
+                                       Style="{StaticResource NumberDisplay}"
+                                       FontSize="52"
+                                       Foreground="#2C3E50"/>
+                        </StackPanel>
+                    </Border>
+                </Border>
+
+                <!-- 按钮区域 -->
+                <StackPanel Grid.Row="3" 
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Center" >
+
+                    <!-- 开始按钮 -->
+                    <Button Command="{Binding StartCommand}"
+                            Style="{StaticResource ModernButton}"
+                            Margin="5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#27AE60" Offset="0"/>
+                                <GradientStop Color="#2ECC71" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="▶" Margin="0,0,5,0"/>
+                            <TextBlock Text="开始抽奖"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- 停止按钮 -->
                     <Button Command="{Binding StopCommand}"
-                        Content="停止"
-                        Height="50" Width="100" Margin="50 0 0 0"/>
+                            Style="{StaticResource ModernButton}"
+                            Margin="5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#E74C3C" Offset="0"/>
+                                <GradientStop Color="#EC7063" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="⏹" Margin="0,0,5,0"/>
+                            <TextBlock Text="停止抽奖"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
 
+                <!-- 底部装饰线 -->
+                <Border Grid.Row="4" 
+                        Height="1" 
+                        Background="#E0E0E0" 
+                        Margin="0,30,0,0"/>
+
+                <TextBlock Grid.Row="5" 
+                           Text="✨ 点击开始，滚动号码，点击停止，获得幸运号码 ✨" 
+                           FontSize="11" 
+                           Foreground="#BDC3C7"
+                           HorizontalAlignment="Center"
+                           Margin="0,15,0,0"/>
             </Grid>
-            
-
         </Border>
-
-
     </Grid>
 </Window>
