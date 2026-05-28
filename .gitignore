@@ -1,0 +1,5 @@
+# 不纳入远程仓库的本地文件
+.claude/
+AGENTS.md
+docs/
+scripts/
